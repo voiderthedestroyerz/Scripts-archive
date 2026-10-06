@@ -46,7 +46,7 @@ G2L["3"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]]
 G2L["3"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["3"]["Size"] = UDim2.new(0, 435, 0, 30);
 G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3"]["Text"] = [[Pentest ur game]];
+G2L["3"]["Text"] = [[Project Moon - Project Stigma Ultimate Revival]];
 G2L["3"]["Name"] = [[EXEName]];
 G2L["3"]["Position"] = UDim2.new(0.06048, 0, 0, 0);
 
