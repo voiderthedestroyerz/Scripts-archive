@@ -1,4 +1,14 @@
 --Archival Porpuses only
+--[[
+Bricks Serverside
+Created by VOIDERTHEDESTROYER
+Version:V1(Latest)
+Popular games supported:
+https://www.roblox.com/games/123974602339071/Just-a-baseplate
+https://www.roblox.com/games/192800/Work-at-a-Pizza-Place
+https://www.roblox.com/games/142823291/Murder-Mystery-2
+And more!
+]]--
 -- Gui to Lua
 -- Version: 3.2
 
