@@ -69,6 +69,7 @@ TextBox.Size = UDim2.new(0, 368, 0, 174)
 TextBox.Font = Enum.Font.SourceSans
 TextBox.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
 TextBox.PlaceholderText = "--Created by Da Exploiterz"
+TextBox.ClearTextOnFocus = false
 TextBox.Text = ""
 TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextBox.TextSize = 14.000
