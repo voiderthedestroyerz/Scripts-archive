@@ -8,6 +8,10 @@ https://www.roblox.com/games/123974602339071/Just-a-baseplate
 https://www.roblox.com/games/192800/Work-at-a-Pizza-Place
 https://www.roblox.com/games/142823291/Murder-Mystery-2
 And more!
+Also,this was originally a paid script,that costed 300 robux,it had alot of players and it was private
+Now that is public,you can have it for free.
+It lasted for 1 month so,take it here.
+By the way this is discontinued
 ]]--
 -- Gui to Lua
 -- Version: 3.2
