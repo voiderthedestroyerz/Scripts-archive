@@ -1,0 +1,37 @@
+-- Made by Voiderthedestroyer 
+local s = Instance.new("Sky")
+s.Name = "Sky"
+s.Parent = game.Lighting
+s.SkyboxBk = "http://www.roblox.com/asset/?id=3342499434"
+s.SkyboxDn = "http://www.roblox.com/asset/?id=3342499434"
+s.SkyboxFt = "http://www.roblox.com/asset/?id=3342499434"
+s.SkyboxLf = "http://www.roblox.com/asset/?id=3342499434"
+s.SkyboxRt = "http://www.roblox.com/asset/?id=3342499434"
+s.SkyboxUp = "http://www.roblox.com/asset/?id=3342499434"
+game.Lighting.TimeOfDay = "12:00:00"
+
+for i, v in pairs(game.Workspace:GetDescendants()) do
+    if v:IsA("BasePart") then 
+        local One = Instance.new("Decal", v)
+        local Two = Instance.new("Decal", v)
+        local Three = Instance.new("Decal", v)
+        local Four = Instance.new("Decal", v)
+        local Five = Instance.new("Decal", v)
+        local Six = Instance.new("Decal", v)
+
+        One.Face = Enum.NormalId.Front
+        Two.Face = Enum.NormalId.Left
+        Three.Face = Enum.NormalId.Right
+        Four.Face = Enum.NormalId.Top
+        Five.Face = Enum.NormalId.Bottom
+        Six.Face = Enum.NormalId.Back
+
+        One.Texture = "rbxassetid://3342499434"
+        Two.Texture = "rbxassetid://3342499434"
+        Three.Texture = "rbxassetid://3342499434"
+        Four.Texture = "rbxassetid://3342499434"
+        Five.Texture = "rbxassetid://3342499434"
+        Six.Texture = "rbxassetid://3342499434"
+    end
+end
+

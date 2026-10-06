@@ -1,0 +1,44 @@
+local hint = Instance.new("Hint")
+hint.Text = "TEAM C00LKIDD REVIVAL JOIN TODAY!!!!!"
+hint.Parent = workspace
+
+local function applyDecalToAll()
+    for _, object in ipairs(workspace:GetDescendants()) do
+        if object:IsA("BasePart") then
+            local decal = Instance.new("Decal")
+            decal.Texture = "rbxassetid://14569362147"
+            decal.Face = Enum.NormalId.Front
+            decal.Parent = object
+            
+            local decalBack = Instance.new("Decal")
+            decalBack.Texture = "rbxassetid://14569362147"
+            decalBack.Face = Enum.NormalId.Back
+            decalBack.Parent = object
+            
+            local decalTop = Instance.new("Decal")
+            decalTop.Texture = "rbxassetid://14569362147"
+            decalTop.Face = Enum.NormalId.Top
+            decalTop.Parent = object
+            
+            local decalBottom = Instance.new("Decal")
+            decalBottom.Texture = "rbxassetid://14569362147"
+            decalBottom.Face = Enum.NormalId.Bottom
+            decalBottom.Parent = object
+            
+            local decalLeft = Instance.new("Decal")
+            decalLeft.Texture = "rbxassetid://14569362147"
+            decalLeft.Face = Enum.NormalId.Left
+            decalLeft.Parent = object
+            
+            local decalRight = Instance.new("Decal")
+            decalRight.Texture = "rbxassetid://14569362147"
+            decalRight.Face = Enum.NormalId.Right
+            decalRight.Parent = object
+        end
+    end
+end
+
+applyDecalToAll()
+local hint = Instance.new("Message")
+hint.Text = "TEAM C00LKIDD REVIVAL JOIN TODAY!!!!!!!!"
+hint.Parent = workspace

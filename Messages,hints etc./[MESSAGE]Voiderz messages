@@ -1,0 +1,6 @@
+local o = Instance.new("Message",workspace)
+while true do
+	o.Text = "35enz was here. {} Voiderthedestroyer on yt"
+	wait(10)
+	o:Destroy()
+    end
