@@ -16,7 +16,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 39 | Scripts: 11 | Modules: 0 | Tags: 0
+-- Instances: 55 | Scripts: 17 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.ProjectMoonPM
@@ -46,7 +46,7 @@ G2L["3"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]]
 G2L["3"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["3"]["Size"] = UDim2.new(0, 435, 0, 30);
 G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3"]["Text"] = [[Project Moon - Project Stigma Ultimate Revival]];
+G2L["3"]["Text"] = [[Project Moon - Project Sitmga Ultimate Revival]];
 G2L["3"]["Name"] = [[EXEName]];
 G2L["3"]["Position"] = UDim2.new(0.06048, 0, 0, 0);
 
@@ -102,9 +102,9 @@ G2L["7"]["Name"] = [[EXE]];
 G2L["7"]["Position"] = UDim2.new(0.64544, 0, 0.02419, 0);
 
 
--- StarterGui.ProjectMoonPM.main.Executor.EXE.LocalScript
+-- StarterGui.ProjectMoonPM.main.Executor.EXE.EXE
 G2L["8"] = Instance.new("LocalScript", G2L["7"]);
-
+G2L["8"]["Name"] = [[EXE]];
 
 
 -- StarterGui.ProjectMoonPM.main.Executor.CLEAR
@@ -121,9 +121,9 @@ G2L["9"]["Name"] = [[CLEAR]];
 G2L["9"]["Position"] = UDim2.new(0.64544, 0, 0.25887, 0);
 
 
--- StarterGui.ProjectMoonPM.main.Executor.CLEAR.LocalScript
+-- StarterGui.ProjectMoonPM.main.Executor.CLEAR.CLR
 G2L["a"] = Instance.new("LocalScript", G2L["9"]);
-
+G2L["a"]["Name"] = [[CLR]];
 
 
 -- StarterGui.ProjectMoonPM.main.Executor.LOAD
@@ -140,9 +140,9 @@ G2L["b"]["Name"] = [[LOAD]];
 G2L["b"]["Position"] = UDim2.new(0.64544, 0, 0.4879, 0);
 
 
--- StarterGui.ProjectMoonPM.main.Executor.LOAD.LocalScript
+-- StarterGui.ProjectMoonPM.main.Executor.LOAD.LOAD
 G2L["c"] = Instance.new("LocalScript", G2L["b"]);
-
+G2L["c"]["Name"] = [[LOAD]];
 
 
 -- StarterGui.ProjectMoonPM.main.Executor.scripts
@@ -198,188 +198,159 @@ G2L["12"] = Instance.new("UIListLayout", G2L["d"]);
 G2L["12"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
 
--- StarterGui.ProjectMoonPM.main.Executor.ScrollingFrame
-G2L["13"] = Instance.new("ScrollingFrame", G2L["5"]);
-G2L["13"]["Active"] = true;
+-- StarterGui.ProjectMoonPM.main.Executor.scripts.message
+G2L["13"] = Instance.new("TextButton", G2L["d"]);
+G2L["13"]["TextWrapped"] = true;
 G2L["13"]["BorderSizePixel"] = 2;
+G2L["13"]["TextSize"] = 14;
+G2L["13"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["13"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["13"]["Size"] = UDim2.new(0, 341, 0, 49);
-G2L["13"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["13"]["Position"] = UDim2.new(0.01944, 0, 0.78544, 0);
+G2L["13"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["13"]["Size"] = UDim2.new(0, 70, 0, 35);
 G2L["13"]["BorderColor3"] = Color3.fromRGB(95, 95, 95);
+G2L["13"]["Text"] = [[Message.txt]];
+G2L["13"]["Name"] = [[message]];
+G2L["13"]["Position"] = UDim2.new(0, 0, 0.1341, 0);
+
+
+-- StarterGui.ProjectMoonPM.main.Executor.scripts.message.messagescript
+G2L["14"] = Instance.new("LocalScript", G2L["13"]);
+G2L["14"]["Name"] = [[messagescript]];
+
+
+-- StarterGui.ProjectMoonPM.main.Executor.scripts.stummyguns
+G2L["15"] = Instance.new("TextButton", G2L["d"]);
+G2L["15"]["TextWrapped"] = true;
+G2L["15"]["BorderSizePixel"] = 2;
+G2L["15"]["TextSize"] = 14;
+G2L["15"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["15"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["15"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["15"]["Size"] = UDim2.new(0, 70, 0, 35);
+G2L["15"]["BorderColor3"] = Color3.fromRGB(95, 95, 95);
+G2L["15"]["Text"] = [[Stummy guns.txt]];
+G2L["15"]["Name"] = [[stummyguns]];
+
+
+-- StarterGui.ProjectMoonPM.main.Executor.scripts.stummyguns.stummygunsscript
+G2L["16"] = Instance.new("LocalScript", G2L["15"]);
+G2L["16"]["Name"] = [[stummygunsscript]];
+
+
+-- StarterGui.ProjectMoonPM.main.Executor.scripts.k00pv11
+G2L["17"] = Instance.new("TextButton", G2L["d"]);
+G2L["17"]["TextWrapped"] = true;
+G2L["17"]["BorderSizePixel"] = 2;
+G2L["17"]["TextSize"] = 14;
+G2L["17"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["17"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["17"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["17"]["Size"] = UDim2.new(0, 70, 0, 35);
+G2L["17"]["BorderColor3"] = Color3.fromRGB(95, 95, 95);
+G2L["17"]["Text"] = [[K00pGUI V11.txt]];
+G2L["17"]["Name"] = [[k00pv11]];
+
+
+-- StarterGui.ProjectMoonPM.main.Executor.scripts.k00pv11.k00pscript
+G2L["18"] = Instance.new("LocalScript", G2L["17"]);
+G2L["18"]["Name"] = [[k00pscript]];
+
+
+-- StarterGui.ProjectMoonPM.main.Executor.scripts.spunchub
+G2L["19"] = Instance.new("TextButton", G2L["d"]);
+G2L["19"]["BorderSizePixel"] = 2;
+G2L["19"]["TextSize"] = 14;
+G2L["19"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["19"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["19"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["19"]["Size"] = UDim2.new(0, 70, 0, 35);
+G2L["19"]["BorderColor3"] = Color3.fromRGB(95, 95, 95);
+G2L["19"]["Text"] = [[SpunchHub.txt]];
+G2L["19"]["Name"] = [[spunchub]];
+
+
+-- StarterGui.ProjectMoonPM.main.Executor.scripts.spunchub.spunchhubscript
+G2L["1a"] = Instance.new("LocalScript", G2L["19"]);
+G2L["1a"]["Name"] = [[spunchhubscript]];
+
+
+-- StarterGui.ProjectMoonPM.main.Executor.ScrollingFrame
+G2L["1b"] = Instance.new("ScrollingFrame", G2L["5"]);
+G2L["1b"]["Active"] = true;
+G2L["1b"]["BorderSizePixel"] = 2;
+G2L["1b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1b"]["Size"] = UDim2.new(0, 341, 0, 49);
+G2L["1b"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1b"]["Position"] = UDim2.new(0.01944, 0, 0.78544, 0);
+G2L["1b"]["BorderColor3"] = Color3.fromRGB(95, 95, 95);
 
 
 -- StarterGui.ProjectMoonPM.main.Executor.ScrollingFrame.TextLabel
-G2L["14"] = Instance.new("TextLabel", G2L["13"]);
-G2L["14"]["BorderSizePixel"] = 0;
-G2L["14"]["TextSize"] = 14;
-G2L["14"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["14"]["TextYAlignment"] = Enum.TextYAlignment.Top;
-G2L["14"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["14"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["14"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["14"]["Size"] = UDim2.new(0, 289, 0, 18);
-G2L["14"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["14"]["Text"] = [[]];
-G2L["14"]["Position"] = UDim2.new(0, 0, 0, 0);
+G2L["1c"] = Instance.new("TextLabel", G2L["1b"]);
+G2L["1c"]["BorderSizePixel"] = 0;
+G2L["1c"]["TextSize"] = 14;
+G2L["1c"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["1c"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["1c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1c"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1c"]["Size"] = UDim2.new(0, 289, 0, 18);
+G2L["1c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1c"]["Text"] = [[]];
+G2L["1c"]["Position"] = UDim2.new(0, 0, 0, 0);
 
 
 -- StarterGui.ProjectMoonPM.main.Executor.executor
-G2L["15"] = Instance.new("TextButton", G2L["5"]);
-G2L["15"]["BorderSizePixel"] = 0;
-G2L["15"]["TextSize"] = 14;
-G2L["15"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["15"]["BackgroundColor3"] = Color3.fromRGB(217, 218, 218);
-G2L["15"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["15"]["Size"] = UDim2.new(0, 79, 0, 22);
-G2L["15"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["15"]["Text"] = [[Executor]];
-G2L["15"]["Name"] = [[executor]];
-G2L["15"]["Position"] = UDim2.new(0, 0, -0.08806, 0);
+G2L["1d"] = Instance.new("TextButton", G2L["5"]);
+G2L["1d"]["BorderSizePixel"] = 0;
+G2L["1d"]["TextSize"] = 14;
+G2L["1d"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1d"]["BackgroundColor3"] = Color3.fromRGB(217, 218, 218);
+G2L["1d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1d"]["Size"] = UDim2.new(0, 79, 0, 22);
+G2L["1d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1d"]["Text"] = [[Executor]];
+G2L["1d"]["Name"] = [[executor]];
+G2L["1d"]["Position"] = UDim2.new(0, 0, -0.08806, 0);
 
 
--- StarterGui.ProjectMoonPM.main.Executor.executor.LocalScript
-G2L["16"] = Instance.new("LocalScript", G2L["15"]);
-
+-- StarterGui.ProjectMoonPM.main.Executor.executor.hjhhhhhhhhhh
+G2L["1e"] = Instance.new("LocalScript", G2L["1d"]);
+G2L["1e"]["Name"] = [[hjhhhhhhhhhh]];
 
 
 -- StarterGui.ProjectMoonPM.main.Executor.settings
-G2L["17"] = Instance.new("TextButton", G2L["5"]);
-G2L["17"]["BorderSizePixel"] = 0;
-G2L["17"]["TextSize"] = 14;
-G2L["17"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["17"]["BackgroundColor3"] = Color3.fromRGB(175, 176, 176);
-G2L["17"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["17"]["Size"] = UDim2.new(0, 79, 0, 21);
-G2L["17"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["17"]["Text"] = [[Settings]];
-G2L["17"]["Name"] = [[settings]];
-G2L["17"]["Position"] = UDim2.new(0.17063, 0, -0.08429, 0);
+G2L["1f"] = Instance.new("TextButton", G2L["5"]);
+G2L["1f"]["BorderSizePixel"] = 0;
+G2L["1f"]["TextSize"] = 14;
+G2L["1f"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1f"]["BackgroundColor3"] = Color3.fromRGB(175, 176, 176);
+G2L["1f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1f"]["Size"] = UDim2.new(0, 79, 0, 21);
+G2L["1f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1f"]["Text"] = [[Settings]];
+G2L["1f"]["Name"] = [[settings]];
+G2L["1f"]["Position"] = UDim2.new(0.17063, 0, -0.08429, 0);
 
 
--- StarterGui.ProjectMoonPM.main.Executor.settings.LocalScript
-G2L["18"] = Instance.new("LocalScript", G2L["17"]);
-
+-- StarterGui.ProjectMoonPM.main.Executor.settings.eeeeeeeeeeeeeeeeeeeeeeeeeeeee
+G2L["20"] = Instance.new("LocalScript", G2L["1f"]);
+G2L["20"]["Name"] = [[eeeeeeeeeeeeeeeeeeeeeeeeeeeee]];
 
 
 -- StarterGui.ProjectMoonPM.main.Settings
-G2L["19"] = Instance.new("Frame", G2L["2"]);
-G2L["19"]["Visible"] = false;
-G2L["19"]["BorderSizePixel"] = 0;
-G2L["19"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["19"]["Size"] = UDim2.new(0, 463, 0, 261);
-G2L["19"]["Position"] = UDim2.new(0, 0, 0.16613, 0);
-G2L["19"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["19"]["Name"] = [[Settings]];
+G2L["21"] = Instance.new("Frame", G2L["2"]);
+G2L["21"]["Visible"] = false;
+G2L["21"]["BorderSizePixel"] = 0;
+G2L["21"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["21"]["Size"] = UDim2.new(0, 463, 0, 261);
+G2L["21"]["Position"] = UDim2.new(0, 0, 0.16613, 0);
+G2L["21"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["21"]["Name"] = [[Settings]];
 
 
 -- StarterGui.ProjectMoonPM.main.Settings.ssssssssssssssssssssss
-G2L["1a"] = Instance.new("TextLabel", G2L["19"]);
-G2L["1a"]["BorderSizePixel"] = 0;
-G2L["1a"]["TextSize"] = 14;
-G2L["1a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["1a"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1a"]["BackgroundTransparency"] = 1;
-G2L["1a"]["Size"] = UDim2.new(0, 435, 0, 30);
-G2L["1a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1a"]["Text"] = [[Credits:VOIDERTHEDESTROYER]];
-G2L["1a"]["Name"] = [[ssssssssssssssssssssss]];
-
-
--- StarterGui.ProjectMoonPM.main.Settings.ssss
-G2L["1b"] = Instance.new("TextLabel", G2L["19"]);
-G2L["1b"]["BorderSizePixel"] = 0;
-G2L["1b"]["TextSize"] = 14;
-G2L["1b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["1b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["1b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["1b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1b"]["BackgroundTransparency"] = 1;
-G2L["1b"]["Size"] = UDim2.new(0, 435, 0, 30);
-G2L["1b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1b"]["Text"] = [[Executes on backdoor]];
-G2L["1b"]["Name"] = [[ssss]];
-G2L["1b"]["Position"] = UDim2.new(0, 0, 0.08812, 0);
-
-
--- StarterGui.ProjectMoonPM.main.Settings.executor
-G2L["1c"] = Instance.new("TextButton", G2L["19"]);
-G2L["1c"]["BorderSizePixel"] = 0;
-G2L["1c"]["TextSize"] = 14;
-G2L["1c"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1c"]["BackgroundColor3"] = Color3.fromRGB(175, 176, 176);
-G2L["1c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["1c"]["Size"] = UDim2.new(0, 79, 0, 21);
-G2L["1c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1c"]["Text"] = [[Executor]];
-G2L["1c"]["Name"] = [[executor]];
-G2L["1c"]["Position"] = UDim2.new(0, 0, -0.08429, 0);
-
-
--- StarterGui.ProjectMoonPM.main.Settings.executor.LocalScript
-G2L["1d"] = Instance.new("LocalScript", G2L["1c"]);
-
-
-
--- StarterGui.ProjectMoonPM.main.Settings.settings
-G2L["1e"] = Instance.new("TextButton", G2L["19"]);
-G2L["1e"]["BorderSizePixel"] = 0;
-G2L["1e"]["TextSize"] = 14;
-G2L["1e"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1e"]["BackgroundColor3"] = Color3.fromRGB(217, 218, 218);
-G2L["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["1e"]["Size"] = UDim2.new(0, 79, 0, 21);
-G2L["1e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["1e"]["Text"] = [[Settings]];
-G2L["1e"]["Name"] = [[settings]];
-G2L["1e"]["Position"] = UDim2.new(0.17063, 0, -0.08806, 0);
-
-
--- StarterGui.ProjectMoonPM.main.Settings.settings.LocalScript
-G2L["1f"] = Instance.new("LocalScript", G2L["1e"]);
-
-
-
--- StarterGui.ProjectMoonPM.main.Settings.df342
-G2L["20"] = Instance.new("TextLabel", G2L["19"]);
-G2L["20"]["TextWrapped"] = true;
-G2L["20"]["BorderSizePixel"] = 0;
-G2L["20"]["TextSize"] = 14;
-G2L["20"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["20"]["TextScaled"] = true;
-G2L["20"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["20"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["20"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["20"]["BackgroundTransparency"] = 1;
-G2L["20"]["Size"] = UDim2.new(0, 435, 0, 30);
-G2L["20"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["20"]["Text"] = [[Changelogs:]];
-G2L["20"]["Name"] = [[df342]];
-G2L["20"]["Position"] = UDim2.new(0, 0, 0.17241, 0);
-
-
--- StarterGui.ProjectMoonPM.main.Settings.asda
-G2L["21"] = Instance.new("TextLabel", G2L["19"]);
-G2L["21"]["TextWrapped"] = true;
-G2L["21"]["BorderSizePixel"] = 0;
-G2L["21"]["TextSize"] = 14;
-G2L["21"]["TextXAlignment"] = Enum.TextXAlignment.Left;
-G2L["21"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["21"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["21"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["21"]["BackgroundTransparency"] = 1;
-G2L["21"]["Size"] = UDim2.new(0, 435, 0, 30);
-G2L["21"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["21"]["Text"] = [[Made the scanner better]];
-G2L["21"]["Name"] = [[asda]];
-G2L["21"]["Position"] = UDim2.new(0, 0, 0.28736, 0);
-
-
--- StarterGui.ProjectMoonPM.main.Settings.sdgsdgs
-G2L["22"] = Instance.new("TextLabel", G2L["19"]);
-G2L["22"]["TextWrapped"] = true;
+G2L["22"] = Instance.new("TextLabel", G2L["21"]);
 G2L["22"]["BorderSizePixel"] = 0;
 G2L["22"]["TextSize"] = 14;
 G2L["22"]["TextXAlignment"] = Enum.TextXAlignment.Left;
@@ -389,13 +360,12 @@ G2L["22"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["22"]["BackgroundTransparency"] = 1;
 G2L["22"]["Size"] = UDim2.new(0, 435, 0, 30);
 G2L["22"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["22"]["Text"] = [[Made the UI better]];
-G2L["22"]["Name"] = [[sdgsdgs]];
-G2L["22"]["Position"] = UDim2.new(0, 0, 0.341, 0);
+G2L["22"]["Text"] = [[Credits:VOIDERTHEDESTROYER]];
+G2L["22"]["Name"] = [[ssssssssssssssssssssss]];
 
 
--- StarterGui.ProjectMoonPM.main.Settings.ssssssssssssssssssssss
-G2L["23"] = Instance.new("TextLabel", G2L["19"]);
+-- StarterGui.ProjectMoonPM.main.Settings.ssss
+G2L["23"] = Instance.new("TextLabel", G2L["21"]);
 G2L["23"]["BorderSizePixel"] = 0;
 G2L["23"]["TextSize"] = 14;
 G2L["23"]["TextXAlignment"] = Enum.TextXAlignment.Left;
@@ -403,52 +373,245 @@ G2L["23"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["23"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["23"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["23"]["BackgroundTransparency"] = 1;
-G2L["23"]["Size"] = UDim2.new(0, 286, 0, 31);
+G2L["23"]["Size"] = UDim2.new(0, 435, 0, 30);
 G2L["23"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["23"]["Text"] = [[Version:V1.1]];
-G2L["23"]["Name"] = [[ssssssssssssssssssssss]];
-G2L["23"]["Position"] = UDim2.new(0.38229, 0, -0.00383, 0);
+G2L["23"]["Text"] = [[Executes on backdoor]];
+G2L["23"]["Name"] = [[ssss]];
+G2L["23"]["Position"] = UDim2.new(0, 0, 0.08812, 0);
+
+
+-- StarterGui.ProjectMoonPM.main.Settings.executor
+G2L["24"] = Instance.new("TextButton", G2L["21"]);
+G2L["24"]["BorderSizePixel"] = 0;
+G2L["24"]["TextSize"] = 14;
+G2L["24"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["24"]["BackgroundColor3"] = Color3.fromRGB(175, 176, 176);
+G2L["24"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["24"]["Size"] = UDim2.new(0, 79, 0, 21);
+G2L["24"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["24"]["Text"] = [[Executor]];
+G2L["24"]["Name"] = [[executor]];
+G2L["24"]["Position"] = UDim2.new(0, 0, -0.08429, 0);
+
+
+-- StarterGui.ProjectMoonPM.main.Settings.executor.eeeeeeeeeee
+G2L["25"] = Instance.new("LocalScript", G2L["24"]);
+G2L["25"]["Name"] = [[eeeeeeeeeee]];
+
+
+-- StarterGui.ProjectMoonPM.main.Settings.settings
+G2L["26"] = Instance.new("TextButton", G2L["21"]);
+G2L["26"]["BorderSizePixel"] = 0;
+G2L["26"]["TextSize"] = 14;
+G2L["26"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["26"]["BackgroundColor3"] = Color3.fromRGB(217, 218, 218);
+G2L["26"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["26"]["Size"] = UDim2.new(0, 79, 0, 22);
+G2L["26"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["26"]["Text"] = [[Settings]];
+G2L["26"]["Name"] = [[settings]];
+G2L["26"]["Position"] = UDim2.new(0.17063, 0, -0.08429, 0);
+
+
+-- StarterGui.ProjectMoonPM.main.Settings.settings.addddddddddddd
+G2L["27"] = Instance.new("LocalScript", G2L["26"]);
+G2L["27"]["Name"] = [[addddddddddddd]];
+
+
+-- StarterGui.ProjectMoonPM.main.Settings.df342
+G2L["28"] = Instance.new("TextLabel", G2L["21"]);
+G2L["28"]["TextWrapped"] = true;
+G2L["28"]["BorderSizePixel"] = 0;
+G2L["28"]["TextSize"] = 14;
+G2L["28"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["28"]["TextScaled"] = true;
+G2L["28"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["28"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["28"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["28"]["BackgroundTransparency"] = 1;
+G2L["28"]["Size"] = UDim2.new(0, 435, 0, 30);
+G2L["28"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["28"]["Text"] = [[Changelogs:]];
+G2L["28"]["Name"] = [[df342]];
+G2L["28"]["Position"] = UDim2.new(0, 0, 0.17241, 0);
+
+
+-- StarterGui.ProjectMoonPM.main.Settings.asda
+G2L["29"] = Instance.new("TextLabel", G2L["21"]);
+G2L["29"]["TextWrapped"] = true;
+G2L["29"]["BorderSizePixel"] = 0;
+G2L["29"]["TextSize"] = 14;
+G2L["29"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["29"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["29"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["29"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["29"]["BackgroundTransparency"] = 1;
+G2L["29"]["Size"] = UDim2.new(0, 435, 0, 30);
+G2L["29"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["29"]["Text"] = [[Made the scanner better]];
+G2L["29"]["Name"] = [[asda]];
+G2L["29"]["Position"] = UDim2.new(0, 0, 0.28736, 0);
+
+
+-- StarterGui.ProjectMoonPM.main.Settings.sdgsdgs
+G2L["2a"] = Instance.new("TextLabel", G2L["21"]);
+G2L["2a"]["TextWrapped"] = true;
+G2L["2a"]["BorderSizePixel"] = 0;
+G2L["2a"]["TextSize"] = 14;
+G2L["2a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["2a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2a"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2a"]["BackgroundTransparency"] = 1;
+G2L["2a"]["Size"] = UDim2.new(0, 435, 0, 30);
+G2L["2a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2a"]["Text"] = [[Made the UI better]];
+G2L["2a"]["Name"] = [[sdgsdgs]];
+G2L["2a"]["Position"] = UDim2.new(0, 0, 0.341, 0);
+
+
+-- StarterGui.ProjectMoonPM.main.Settings.ssssssssssssssssssssss
+G2L["2b"] = Instance.new("TextLabel", G2L["21"]);
+G2L["2b"]["BorderSizePixel"] = 0;
+G2L["2b"]["TextSize"] = 14;
+G2L["2b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["2b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2b"]["BackgroundTransparency"] = 1;
+G2L["2b"]["Size"] = UDim2.new(0, 286, 0, 31);
+G2L["2b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2b"]["Text"] = [[Version:V1.1]];
+G2L["2b"]["Name"] = [[ssssssssssssssssssssss]];
+G2L["2b"]["Position"] = UDim2.new(0.38229, 0, -0.00383, 0);
 
 
 -- StarterGui.ProjectMoonPM.main.Settings.logo2
-G2L["24"] = Instance.new("ImageLabel", G2L["19"]);
-G2L["24"]["BorderSizePixel"] = 0;
-G2L["24"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["24"]["Image"] = [[rbxassetid://7102117818]];
-G2L["24"]["Size"] = UDim2.new(0, 98, 0, 99);
-G2L["24"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["24"]["Name"] = [[logo2]];
-G2L["24"]["Position"] = UDim2.new(0.78834, 0, 0.62069, 0);
+G2L["2c"] = Instance.new("ImageLabel", G2L["21"]);
+G2L["2c"]["BorderSizePixel"] = 0;
+G2L["2c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2c"]["Image"] = [[rbxassetid://7102117818]];
+G2L["2c"]["Size"] = UDim2.new(0, 98, 0, 99);
+G2L["2c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2c"]["Name"] = [[logo2]];
+G2L["2c"]["Position"] = UDim2.new(0.78834, 0, 0.62069, 0);
+
+
+-- StarterGui.ProjectMoonPM.main.Settings.error
+G2L["2d"] = Instance.new("Frame", G2L["21"]);
+G2L["2d"]["Visible"] = false;
+G2L["2d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2d"]["Size"] = UDim2.new(0, 156, 0, 73);
+G2L["2d"]["Position"] = UDim2.new(0.36069, 0, 0.26054, 0);
+G2L["2d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2d"]["Name"] = [[error]];
+
+
+-- StarterGui.ProjectMoonPM.main.Settings.error.errortile
+G2L["2e"] = Instance.new("TextLabel", G2L["2d"]);
+G2L["2e"]["BorderSizePixel"] = 0;
+G2L["2e"]["TextSize"] = 14;
+G2L["2e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2e"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2e"]["Size"] = UDim2.new(0, 156, 0, 20);
+G2L["2e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2e"]["Text"] = [[Info]];
+G2L["2e"]["Name"] = [[errortile]];
+
+
+-- StarterGui.ProjectMoonPM.main.Settings.error.errorcontent
+G2L["2f"] = Instance.new("TextLabel", G2L["2d"]);
+G2L["2f"]["TextWrapped"] = true;
+G2L["2f"]["BorderSizePixel"] = 0;
+G2L["2f"]["TextSize"] = 14;
+G2L["2f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2f"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2f"]["Size"] = UDim2.new(0, 156, 0, 54);
+G2L["2f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2f"]["Text"] = [[If it did not execute then most probably Backdoor not found or game not supported.]];
+G2L["2f"]["Name"] = [[errorcontent]];
+G2L["2f"]["Position"] = UDim2.new(0, 0, 0.26027, 0);
+
+
+-- StarterGui.ProjectMoonPM.main.Settings.error.ImageLabel
+G2L["30"] = Instance.new("ImageLabel", G2L["2d"]);
+G2L["30"]["BorderSizePixel"] = 0;
+G2L["30"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["30"]["Image"] = [[rbxassetid://10023561443]];
+G2L["30"]["Size"] = UDim2.new(0, 19, 0, 20);
+G2L["30"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+
+-- StarterGui.ProjectMoonPM.main.Settings.error.exit2
+G2L["31"] = Instance.new("TextButton", G2L["2d"]);
+G2L["31"]["BorderSizePixel"] = 0;
+G2L["31"]["TextSize"] = 14;
+G2L["31"]["TextColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["31"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["31"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["31"]["Size"] = UDim2.new(0, 24, 0, 20);
+G2L["31"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["31"]["Text"] = [[X]];
+G2L["31"]["Name"] = [[exit2]];
+G2L["31"]["Position"] = UDim2.new(0.83975, 0, 0, 0);
+
+
+-- StarterGui.ProjectMoonPM.main.Settings.error.exit2.exitthing
+G2L["32"] = Instance.new("LocalScript", G2L["31"]);
+G2L["32"]["Name"] = [[exitthing]];
+
+
+-- StarterGui.ProjectMoonPM.main.Settings.info
+G2L["33"] = Instance.new("TextButton", G2L["21"]);
+G2L["33"]["BorderSizePixel"] = 2;
+G2L["33"]["TextSize"] = 14;
+G2L["33"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["33"]["BackgroundColor3"] = Color3.fromRGB(227, 227, 227);
+G2L["33"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["33"]["Size"] = UDim2.new(0, 79, 0, 21);
+G2L["33"]["BorderColor3"] = Color3.fromRGB(95, 95, 95);
+G2L["33"]["Text"] = [[Execute info]];
+G2L["33"]["Name"] = [[info]];
+G2L["33"]["Position"] = UDim2.new(0.35853, 0, 0.10351, 0);
+
+
+-- StarterGui.ProjectMoonPM.main.Settings.info.info3
+G2L["34"] = Instance.new("LocalScript", G2L["33"]);
+G2L["34"]["Name"] = [[info3]];
 
 
 -- StarterGui.ProjectMoonPM.main.LocalScript
-G2L["25"] = Instance.new("LocalScript", G2L["2"]);
+G2L["35"] = Instance.new("LocalScript", G2L["2"]);
 
 
 
 -- StarterGui.ProjectMoonPM.main.exit
-G2L["26"] = Instance.new("TextButton", G2L["2"]);
-G2L["26"]["BorderSizePixel"] = 0;
-G2L["26"]["TextSize"] = 14;
-G2L["26"]["TextColor3"] = Color3.fromRGB(255, 0, 0);
-G2L["26"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
-G2L["26"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["26"]["Size"] = UDim2.new(0, 45, 0, 30);
-G2L["26"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["26"]["Text"] = [[X]];
-G2L["26"]["Name"] = [[exit]];
-G2L["26"]["Position"] = UDim2.new(0.90281, 0, 0, 0);
+G2L["36"] = Instance.new("TextButton", G2L["2"]);
+G2L["36"]["BorderSizePixel"] = 0;
+G2L["36"]["TextSize"] = 14;
+G2L["36"]["TextColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["36"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["36"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["36"]["Size"] = UDim2.new(0, 45, 0, 30);
+G2L["36"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["36"]["Text"] = [[X]];
+G2L["36"]["Name"] = [[exit]];
+G2L["36"]["Position"] = UDim2.new(0.90281, 0, 0, 0);
 
 
 -- StarterGui.ProjectMoonPM.main.exit.LocalScript
-G2L["27"] = Instance.new("LocalScript", G2L["26"]);
+G2L["37"] = Instance.new("LocalScript", G2L["36"]);
 
 
 
--- StarterGui.ProjectMoonPM.main.Executor.EXE.LocalScript
+-- StarterGui.ProjectMoonPM.main.Executor.EXE.EXE
 local function C_8()
 local script = G2L["8"];
 	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	
+	local error = "script.Parent.Parent.error.Visible = true"
 	
 	local button = script.Parent
 	local box    = button.Parent:WaitForChild("TextBox")
@@ -501,7 +664,7 @@ local script = G2L["8"];
 	end)
 end;
 task.spawn(C_8);
--- StarterGui.ProjectMoonPM.main.Executor.CLEAR.LocalScript
+-- StarterGui.ProjectMoonPM.main.Executor.CLEAR.CLR
 local function C_a()
 local script = G2L["a"];
 	script.Parent.MouseButton1Click:Connect(function()
@@ -509,7 +672,7 @@ local script = G2L["a"];
 	end)
 end;
 task.spawn(C_a);
--- StarterGui.ProjectMoonPM.main.Executor.LOAD.LocalScript
+-- StarterGui.ProjectMoonPM.main.Executor.LOAD.LOAD
 local function C_c()
 local script = G2L["c"];
 	script.Parent.MouseButton1Click:Connect(function()
@@ -727,58 +890,125 @@ local script = G2L["11"];
 	
 end;
 task.spawn(C_11);
--- StarterGui.ProjectMoonPM.main.Executor.executor.LocalScript
+-- StarterGui.ProjectMoonPM.main.Executor.scripts.message.messagescript
+local function C_14()
+local script = G2L["14"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.TextBox.Text = [[
+		--Credits to this guy for the script https://scriptblox.com/script/Universal-Script-message-script-30617
+		local text = "text" --your text here
+		local duration = 5
+		local message = Instance.new("Message", game.Workspace)
+		message.Text = text
+		wait(duration)
+		message:Destroy()
+	
+	]]
+	end)
+	
+end;
+task.spawn(C_14);
+-- StarterGui.ProjectMoonPM.main.Executor.scripts.stummyguns.stummygunsscript
 local function C_16()
 local script = G2L["16"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.TextBox.Text = [[
+	require(7633712551)("user","Guns") 
+	]]
+	end)
+	
+end;
+task.spawn(C_16);
+-- StarterGui.ProjectMoonPM.main.Executor.scripts.k00pv11.k00pscript
+local function C_18()
+local script = G2L["18"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.TextBox.Text = [[
+		require(15267263357).V11("user") 
+	]]
+	end)
+	
+end;
+task.spawn(C_18);
+-- StarterGui.ProjectMoonPM.main.Executor.scripts.spunchub.spunchhubscript
+local function C_1a()
+local script = G2L["1a"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.TextBox.Text = [[
+		require(129030785853219)("user")
+	]]
+	end)
+	
+end;
+task.spawn(C_1a);
+-- StarterGui.ProjectMoonPM.main.Executor.executor.hjhhhhhhhhhh
+local function C_1e()
+local script = G2L["1e"];
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Executor.Visible = true
 		script.Parent.Parent.Settings.Visible = false
 	end)
 end;
-task.spawn(C_16);
--- StarterGui.ProjectMoonPM.main.Executor.settings.LocalScript
-local function C_18()
-local script = G2L["18"];
+task.spawn(C_1e);
+-- StarterGui.ProjectMoonPM.main.Executor.settings.eeeeeeeeeeeeeeeeeeeeeeeeeeeee
+local function C_20()
+local script = G2L["20"];
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent.Executor.Visible = false
 		script.Parent.Parent.Parent.Settings.Visible = true
 	end)
 end;
-task.spawn(C_18);
--- StarterGui.ProjectMoonPM.main.Settings.executor.LocalScript
-local function C_1d()
-local script = G2L["1d"];
+task.spawn(C_20);
+-- StarterGui.ProjectMoonPM.main.Settings.executor.eeeeeeeeeee
+local function C_25()
+local script = G2L["25"];
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent.Executor.Visible = true
 		script.Parent.Parent.Parent.Settings.Visible = false
 	end)
 end;
-task.spawn(C_1d);
--- StarterGui.ProjectMoonPM.main.Settings.settings.LocalScript
-local function C_1f()
-local script = G2L["1f"];
+task.spawn(C_25);
+-- StarterGui.ProjectMoonPM.main.Settings.settings.addddddddddddd
+local function C_27()
+local script = G2L["27"];
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent.Executor.Visible = false
 		script.Parent.Parent.Parent.Settings.Visible = true
 	end)
 end;
-task.spawn(C_1f);
+task.spawn(C_27);
+-- StarterGui.ProjectMoonPM.main.Settings.error.exit2.exitthing
+local function C_32()
+local script = G2L["32"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Parent.ProjectMoonPM:Destroy()
+	end)
+end;
+task.spawn(C_32);
+-- StarterGui.ProjectMoonPM.main.Settings.info.info3
+local function C_34()
+local script = G2L["34"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.error.Visible =  not script.Parent.Parent.error.Visible
+	end)
+end;
+task.spawn(C_34);
 -- StarterGui.ProjectMoonPM.main.LocalScript
-local function C_25()
-local script = G2L["25"];
+local function C_35()
+local script = G2L["35"];
 	frame = script.Parent.Parent.main
 	frame.Draggable = true
 	frame.Active = true
 	frame.Selectable = true
 end;
-task.spawn(C_25);
+task.spawn(C_35);
 -- StarterGui.ProjectMoonPM.main.exit.LocalScript
-local function C_27()
-local script = G2L["27"];
+local function C_37()
+local script = G2L["37"];
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent.Parent.ProjectMoonPM:Destroy()
 	end)
 end;
-task.spawn(C_27);
+task.spawn(C_37);
 
 return G2L["1"], require;
