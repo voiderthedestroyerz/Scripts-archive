@@ -179,7 +179,7 @@ title.Font = Enum.Font.Nunito
 title.Text = "POLARIA got from github.com/voiderthedestroyerz"
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.TextSize = 19.000
-title.TextWrapped = true
+title.TextWrapped = False
 title.TextXAlignment = Enum.TextXAlignment.Left
 
 close.Name = "close"
