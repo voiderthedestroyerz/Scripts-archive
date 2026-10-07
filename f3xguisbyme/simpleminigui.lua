@@ -17,12 +17,13 @@ local femb = Instance.new("TextButton")
 
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
 
 Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderColor3 = Color3.fromRGB(255, 0, 0)
 Frame.BorderSizePixel = 3
-Frame.Position = UDim2.new(0.38961038, 0, 0.238961041, 0)
+Frame.Position = UDim2.new(0, 0, 0.336363643, 0)
 Frame.Size = UDim2.new(0, 236, 0, 251)
 
 TextLabel.Parent = Frame
@@ -112,7 +113,7 @@ femb.Parent = Frame
 femb.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 femb.BorderColor3 = Color3.fromRGB(255, 0, 0)
 femb.BorderSizePixel = 3
-femb.Position = UDim2.new(0, 0, 0.89641434, 0)
+femb.Position = UDim2.new(0.00423728814, 0, 0.89641434, 0)
 femb.Size = UDim2.new(0, 235, 0, 26)
 femb.Font = Enum.Font.SourceSans
 femb.Text = "C00lkidd skybox"
@@ -123,7 +124,7 @@ femb.TextWrapped = true
 
 -- Scripts:
 
-local function PYSTT_fake_script() -- sky.LocalScript 
+local function KWUI_fake_script() -- sky.LocalScript 
 	local script = Instance.new('LocalScript', sky)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -397,8 +398,8 @@ local function PYSTT_fake_script() -- sky.LocalScript
 	end)
 	
 end
-coroutine.wrap(PYSTT_fake_script)()
-local function GGMC_fake_script() -- decal.LocalScript 
+coroutine.wrap(KWUI_fake_script)()
+local function IMLBT_fake_script() -- decal.LocalScript 
 	local script = Instance.new('LocalScript', decal)
 
 	--id 100963753511845
@@ -679,8 +680,8 @@ local function GGMC_fake_script() -- decal.LocalScript
 	end)
 	
 end
-coroutine.wrap(GGMC_fake_script)()
-local function XMMUK_fake_script() -- particles.LocalScript 
+coroutine.wrap(IMLBT_fake_script)()
+local function CMANLTL_fake_script() -- particles.LocalScript 
 	local script = Instance.new('LocalScript', particles)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -822,24 +823,24 @@ local function XMMUK_fake_script() -- particles.LocalScript
 	
 	end)
 end
-coroutine.wrap(XMMUK_fake_script)()
-local function JHKKI_fake_script() -- sadas.LocalScript 
+coroutine.wrap(CMANLTL_fake_script)()
+local function RQZS_fake_script() -- sadas.LocalScript 
 	local script = Instance.new('LocalScript', sadas)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/voiderthedestroyerz/Scripts-archive/refs/heads/main/f3xguisbyme/notopgui.lua"))()
 	end)
 end
-coroutine.wrap(JHKKI_fake_script)()
-local function SAOS_fake_script() -- asdadawsdasd.LocalScript 
+coroutine.wrap(RQZS_fake_script)()
+local function XEQTNP_fake_script() -- asdadawsdasd.LocalScript 
 	local script = Instance.new('LocalScript', asdadawsdasd)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/voiderthedestroyerz/Scripts-archive/refs/heads/main/f3xguisbyme/F3X%20GUI%20Ultimate.lua"))()
 	end)
 end
-coroutine.wrap(SAOS_fake_script)()
-local function UOWFLLC_fake_script() -- femb.LocalScript 
+coroutine.wrap(XEQTNP_fake_script)()
+local function EDTR_fake_script() -- femb.LocalScript 
 	local script = Instance.new('LocalScript', femb)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -1113,4 +1114,4 @@ local function UOWFLLC_fake_script() -- femb.LocalScript
 	end)
 	
 end
-coroutine.wrap(UOWFLLC_fake_script)()
+coroutine.wrap(EDTR_fake_script)()
