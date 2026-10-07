@@ -177,6 +177,7 @@ title.Position = UDim2.new(0.0153172864, 0, 0, 0)
 title.Size = UDim2.new(0, 187, 0, 29)
 title.Font = Enum.Font.Nunito
 title.Text = "POLARIA got from github.com/voiderthedestroyerz"
+title.TextScaled = true
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.TextSize = 19.000
 title.TextWrapped = False
