@@ -2,7 +2,9 @@
 
 A lightweight, Rayfield-inspired UI library for Roblox. Yellow-and-black theme, single-file, zero dependencies, forgiving callbacks.
 
-![theme](https://img.shields.io/badge/theme-yellow%20%2F%20black-yellow) ![language](https://img.shields.io/badge/language-Luau-blue) ![license](https://img.shields.io/badge/license-MIT-green)
+![theme](https://img.shields.io/badge/theme-yellow%20%2F%20black-yellow) ![language](https://img.shields.io/badge/language-Luau-blue) ![license](https://img.shields.io/badge/license-Credit%20Required-orange)
+
+> **License notice:** This library is free to use, modify, and redistribute **as long as you keep visible credit to the original author**. See [License](#license) for details.
 
 ---
 
@@ -68,6 +70,8 @@ local Window = Voiderz:CreateWindow({ Title = "My Menu" })
 ### Option B — Paste into your script
 
 Copy the entire `voiderz.lua` file into the top of your script. Then write your menu code below it.
+
+> **Reminder:** If you redistribute this library, keep the credit header at the top of `voiderz.lua` intact.
 
 ### Option C — LocalScript in Studio
 
@@ -535,7 +539,7 @@ Voiderz:Notify({
 
 ## Tutorial: Building a Menu Step by Step
 
-This walkthrough builds a complete menu from scratch. Follow along in your executor.
+This walkthrough builds a complete menu from scratch.
 
 ### Step 1 — Load the library
 
@@ -827,14 +831,30 @@ function Voiderz:AddMyElement(options)
 end
 ```
 
+**Q: Can I remove the credit header from `voiderz.lua`?**
+No. This library is distributed under a **Credit Required** license. You may use it in any script, hub, or product you like, but the credit header at the top of `voiderz.lua` must stay intact, and any public distribution of the library or scripts built on it must credit the original author. See [License](#license).
+
 ---
 
 ## License
 
-MIT — do whatever you want. Credit appreciated but not required.
+**Credit Required License**
+
+Copyright (c) 2026 [voiderthedestroyerz](https://github.com/voiderthedestroyerz)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software **without restriction**, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, **subject to the following conditions:**
+
+1. **Attribution is required.** The credit header at the top of `voiderz.lua` must remain intact in any copy or substantial portion of the Software.
+2. **Public distribution must credit the author.** If you redistribute the Software — as-is, modified, or as part of a larger project — you must clearly credit **voiderthedestroyerz** and link back to the original repository:
+   `https://github.com/voiderthedestroyerz/Scripts-archive`
+3. **Derivative works must carry the same license.** If you modify the Software and redistribute the modified version, it must also be distributed under this same Credit Required License.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ---
 
 ## Credits
 
 Inspired by [Rayfield](https://github.com/SirMallard/Rayfield). Built and maintained by [voiderthedestroyerz](https://github.com/voiderthedestroyerz).
+
+If you use this library in a public script, hub, or product, please credit **voiderthedestroyer** and link back to this repo. That's all we ask.
