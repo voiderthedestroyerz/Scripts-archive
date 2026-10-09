@@ -1500,6 +1500,27 @@ Window:AddButton({
 })
 
 
+Window:AddButton({
+    Name = "DEX Explorer ++",
+    Callback = function()
+        RunScript("Dex Explorer ++", "https://github.com/AZYsGithub/DexPlusPlus/releases/latest/download/out.lua")
+    end,
+})
+
+Window:AddButton({
+    Name = "Simplespy",
+    Callback = function()
+        RunScript("SimpleSpy", "https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpyBeta.lua")
+    end,
+})
+
+Window:AddButton({
+    Name = "LALOL Backdoor scanner",
+    Callback = function()
+        RunScript("LALOL Backdoor scanner", "https://raw.githubusercontent.com/Obunga-666/Lalol-hub-without-hint/refs/heads/main/Lalol%20hub%20without%20hint")
+    end,
+})
+
 -- ============================================================
 --  SECTION : HUBS (multi-feature)
 -- ============================================================
@@ -1541,6 +1562,13 @@ Window:AddButton({
     Name = "V01derz/Voidez Admin(need whitelist)",
     Callback = function()
         RunScript("V01derz/Voidez Admin(need whitelist)", "https://raw.githubusercontent.com/voiderthedestroyerz/Scripts-archive/refs/heads/main/v01derzadmin.lua")
+    end,
+})
+
+Window:AddButton({
+    Name = "Infinite Yield",
+    Callback = function()
+        RunScript("Infinite Yield", "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
     end,
 })
 
