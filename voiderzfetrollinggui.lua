@@ -1528,6 +1528,59 @@ Window:AddButton({
     end,
 })
 
+Window:AddSection("CMDS(Admins)")
+
+Window:AddButton({
+    Name = "Quirky CMD",
+    Callback = function()
+        RunScript("Quirky CMD", "https://gist.githubusercontent.com/OfficialCynatica/636bed3e9ba0088733feb986768f8015/raw")
+    end,
+})
+
+Window:AddButton({
+    Name = "V01derz/Voidez Admin(need whitelist)",
+    Callback = function()
+        RunScript("V01derz/Voidez Admin(need whitelist)", "https://raw.githubusercontent.com/voiderthedestroyerz/Scripts-archive/refs/heads/main/v01derzadmin.lua")
+    end,
+})
+
+Window:AddSection("Executors")
+
+ Window:AddButton({
+    Name = "Bricks Serverside",
+    Callback = function()
+        RunScript("Bricks Serverside", "https://raw.githubusercontent.com/voiderthedestroyerz/Scripts-archive/refs/heads/main/bricksserverside/bricks.lua")
+    end,
+})
+
+  Window:AddButton({
+    Name = "Stigma ultimate",
+    Callback = function()
+        RunScript("Stigma Ultimate", "https://raw.githubusercontent.com/voiderthedestroyerz/Scripts-archive/refs/heads/main/stigma.lua")
+    end,
+})
+
+   Window:AddButton({
+    Name = "ATO",
+    Callback = function()
+        RunScript("Stigma Ultimate", "https://raw.githubusercontent.com/voiderthedestroyerz/Scripts-archive/refs/heads/main/ato.lua")
+    end,
+})
+
+Window:AddSection("Guis by VTD")
+
+   Window:AddButton({
+    Name = "C00lgui FE V4",
+    Callback = function()
+        RunScript("C00lgui FE V4", "https://raw.githubusercontent.com/voiderthedestroyerz/C00lguis/refs/heads/main/c00lguiv4.lua")
+    end,
+  })
+     Window:AddButton({
+    Name = "C00lgui Reborn by V3RX modified",
+    Callback = function()
+        RunScript("C00lgui Reborn by V3RX modified", "https://raw.githubusercontent.com/voiderthedestroyerz/C00lguis/refs/heads/main/c00lguibyv3rxmodified.lua")
+    end,
+})
 
 -- ============================================================
 --  WELCOME NOTIFICATION
