@@ -701,7 +701,7 @@ local Config = {
         Transparency = 0.5,
     },
     ToggleKey = Enum.KeyCode.RightShift,
-    Title     = "Voiderz Script Hub",
+    Title     = "Voiderz Script Hub(Voiderz FE Trolling GUI)",
     Size      = UDim2.new(0, 416, 0, 420),
     Position  = UDim2.new(0.232, 0, 0.258, 0),
 }
