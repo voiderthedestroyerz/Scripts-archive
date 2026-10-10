@@ -1521,6 +1521,34 @@ Window:AddButton({
     end,
 })
 
+Window:AddButton({
+    Name = "Krystal Dance V4",
+    Callback = function()
+        RunScript("Krystal Dance V4", "https://raw.githubusercontent.com/mizu-dump/Krystal-DanceV4/refs/heads/main/source.lua")
+    end,
+})
+
+Window:AddButton({
+    Name = "FE Hax GUI V15",
+    Callback = function()
+        RunScript("FE Hax GUI v15", "https://raw.githubusercontent.com/PedroPoles/My-Hubs-and-scripts/refs/heads/main/FE%20Hax%20GUI%20V15")
+    end,
+})
+
+Window:AddButton({
+    Name = "Retro Studio FE GUI",
+    Callback = function()
+        RunScript("Retro Studio FE GUI", "https://pastebin.com/raw/QqxRT1Gv")
+    end,
+})
+
+Window:AddButton({
+    Name = "Simple Mini GUI F3X",
+    Callback = function()
+        RunScript("Retro Studio FE GUI", "https://raw.githubusercontent.com/voiderthedestroyerz/Scripts-archive/refs/heads/main/f3xguisbyme/simpleminigui.lua")
+    end,
+})
+
 -- ============================================================
 --  SECTION : HUBS (multi-feature)
 -- ============================================================
@@ -1598,7 +1626,7 @@ Window:AddSection("Executors")
 Window:AddSection("Guis by VTD")
 
    Window:AddButton({
-    Name = "C00lgui FE V4",
+    Name = "C00lgui FE V4(broken)",
     Callback = function()
         RunScript("C00lgui FE V4", "https://raw.githubusercontent.com/voiderthedestroyerz/C00lguis/refs/heads/main/c00lguiv4.lua")
     end,
