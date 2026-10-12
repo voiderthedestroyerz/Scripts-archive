@@ -1,3 +1,18 @@
+--[[
+888     888     888    888    888     888 
+888     888     888    888    888     888 
+888     888     888    888    888     888 
+888     888     8888888888    Y88b   d88P 
+888     888     888    888     Y88b d88P  
+888     888     888    888      Y88o88P   
+Y88b. .d88P d8b 888    888 d8b   Y888P    
+ "Y88888P"  Y8P 888    888 Y8P    Y8P     
+  Credits to:
+  GDNooby(Rivals script)
+  VOIDERTHEDESTROYER(other scripts + library + creating)
+]]--
+                                          
+
 -- 1) LOAD THE LIBRARY
 --    This downloads uvhlibrary.lua from GitHub and runs it.
 --    It returns the UVH object (the hub builder).
@@ -41,5 +56,15 @@ UVH:AddButton({
     Name = "Dex Explorer ++",
     Callback = function()
          loadstring(game:HttpGet("https://github.com/AZYsGithub/DexPlusPlus/releases/latest/download/out.lua"))() 
+    end,
+})
+
+UVH:AddSection("Rivals")
+
+
+UVH:AddButton({
+    Name = "Elisiom.lol",
+    Callback = function()
+         loadstring(game:HttpGet("https://api.polsec.net/loader/f1741ef3a2610ac7/78c2720d864f3b30"))()
     end,
 })
