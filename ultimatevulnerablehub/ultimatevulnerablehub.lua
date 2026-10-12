@@ -23,6 +23,7 @@ local UVH = loadstring(game:HttpGet(
 -- 2) ADD A SECTION
 --    A section is just a bold header label that groups buttons.
 --    The string inside ("Main") is what shows up in the hub.
+UVH:AddLabel("Part of the projects VoiderzFETrollingGUI and Bricks serverside!")
 UVH:AddSection("Product Fakers(FE)")
 
 -- 3) ADD A BUTTON
@@ -53,6 +54,22 @@ UVH:AddButton({
 })
 
 UVH:AddButton({
+    Name = "John Doe FE",
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/Z6TM3prC"))()
+    end,
+})
+
+UVH:AddButton({
+    Name = "SCP 096",
+    Callback = function()
+    loadstring(game:HttpGet("https://pastefy.app/M25RnnGm/raw"))()
+    end,
+})
+
+UVH:AddSection("Explorers")
+
+UVH:AddButton({
     Name = "Dex Explorer ++",
     Callback = function()
          loadstring(game:HttpGet("https://github.com/AZYsGithub/DexPlusPlus/releases/latest/download/out.lua"))() 
@@ -63,8 +80,18 @@ UVH:AddSection("Rivals")
 
 
 UVH:AddButton({
-    Name = "Elisiom.lol",
+    Name = "Elisium.lol",
     Callback = function()
          loadstring(game:HttpGet("https://api.polsec.net/loader/f1741ef3a2610ac7/78c2720d864f3b30"))()
+    end,
+})
+
+UVH:AddSection("Just a baseplate")
+
+
+UVH:AddButton({
+    Name = "Locust",
+    Callback = function()
+    loadstring(game:HttpGet("https://scriptblox.com/raw/UP-Just-a-baseplate.-Locust-JAB-New-1-230423"))()
     end,
 })
