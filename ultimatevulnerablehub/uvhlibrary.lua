@@ -1,10 +1,10 @@
 -- Ultimate Vulnerable Hub (UVH)
--- Version: 3.3 -- added Sections
+-- Version: 3.4 -- Section labels + animated gradient
 -- Created by VOIDERTHEDESTROYER (aka HyperionBypass)
 
-local Players = game:GetService("Players")
-local TweenService = game:GetService("TweenService")
-local RunService = game:GetService("RunService")
+local Players          = game:GetService("Players")
+local TweenService     = game:GetService("TweenService")
+local RunService       = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
 
 local LocalPlayer = Players.LocalPlayer
@@ -20,7 +20,7 @@ local CONFIG = {
     BackgroundColor = Color3.fromRGB(30, 30, 30),
     HoverColor = Color3.fromRGB(45, 45, 45),
     TextColor = Color3.fromRGB(255, 255, 255),
-    SectionColor = Color3.fromRGB(25, 25, 25),
+    SectionColor = Color3.fromRGB(40, 40, 40),
     GradientColors = ColorSequence.new{
         ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)),
         ColorSequenceKeypoint.new(0.50, Color3.fromRGB(85, 85, 85)),
@@ -28,20 +28,20 @@ local CONFIG = {
     },
     GradientSpeed = 45,
     ButtonHeight = 40,
-    SectionHeaderHeight = 30,
+    SectionHeight = 28,
     AvatarSize = 100,
     HeaderHeight = 31,
 }
 
 --==============================================================
--- HUB OBJECT
+-- HUB
 --==============================================================
 local Hub = {}
 Hub.__index = Hub
 Hub.Buttons = {}
 Hub.Connections = {}
-Hub.Sections = {}
 
+--// helpers
 local function create(className, props)
     local inst = Instance.new(className)
     for k, v in pairs(props or {}) do
@@ -77,7 +77,7 @@ local function addStroke(parent, color, thickness)
 end
 
 --==============================================================
--- BUILD WINDOW
+-- WINDOW
 --==============================================================
 function Hub:CreateWindow()
     local gui = create("ScreenGui", {
@@ -101,8 +101,8 @@ function Hub:CreateWindow()
     addStroke(main)
     applyGradient(main)
 
+    -- Title bar
     local titleBar = create("Frame", {
-        Name = "TitleBar",
         BackgroundColor3 = CONFIG.BackgroundColor,
         BorderSizePixel = 0,
         Size = UDim2.new(1, 0, 0, CONFIG.HeaderHeight),
@@ -122,6 +122,7 @@ function Hub:CreateWindow()
     })
     applyGradient(titleLabel, 60)
 
+    -- Avatar
     local avatarFrame = create("Frame", {
         BackgroundColor3 = CONFIG.BackgroundColor,
         BorderSizePixel = 0,
@@ -180,6 +181,7 @@ function Hub:CreateWindow()
     })
     applyGradient(descLabel, 60)
 
+    -- Scrolling area
     local scroll = create("ScrollingFrame", {
         BackgroundTransparency = 1,
         BorderSizePixel = 0,
@@ -194,7 +196,7 @@ function Hub:CreateWindow()
     self.ScrollingFrame = scroll
 
     create("UIListLayout", {
-        Padding = UDim.new(0, 6),
+        Padding = UDim.new(0, 4),
         SortOrder = Enum.SortOrder.LayoutOrder,
         Parent = scroll,
     })
@@ -238,122 +240,46 @@ function Hub:MakeDraggable(dragFrame, target)
         if input == dragInput and dragging then
             local delta = input.Position - dragStart
             target.Position = UDim2.new(
-                startPos.X.Scale,
-                startPos.X.Offset + delta.X,
-                startPos.Y.Scale,
-                startPos.Y.Offset + delta.Y
+                startPos.X.Scale, startPos.X.Offset + delta.X,
+                startPos.Y.Scale, startPos.Y.Offset + delta.Y
             )
         end
     end))
 end
 
 --==============================================================
--- SECTION OBJECT
+-- PUBLIC API
 --==============================================================
-local Section = {}
-Section.__index = Section
 
--- AddSection({ Name, Collapsed })
-function Hub:AddSection(options)
-    options = options or {}
-    local name = options.Name or "Section"
-    local collapsed = options.Collapsed or false
-
-    -- Section container
-    local container = create("Frame", {
-        Name = name .. "_Section",
+-- AddSection("Name") -- simple header label (like voiderz)
+function Hub:AddSection(name)
+    local section = create("Frame", {
+        Name = (name or "Section") .. "_Section",
         BackgroundColor3 = CONFIG.SectionColor,
         BorderSizePixel = 0,
-        Size = UDim2.new(1, 0, 0, CONFIG.SectionHeaderHeight),
-        AutomaticSize = Enum.AutomaticSize.Y,
+        Size = UDim2.new(1, 0, 0, CONFIG.SectionHeight),
         Parent = self.ScrollingFrame,
     })
-    addCorner(container, 6)
-    addStroke(container)
-    applyGradient(container, 30)
+    addCorner(section, 6)
+    addStroke(section, Color3.fromRGB(80, 80, 80), 1)
+    applyGradient(section, 30)
 
-    -- Header (clickable)
-    local header = create("TextButton", {
-        Name = "Header",
+    create("TextLabel", {
         BackgroundTransparency = 1,
-        Size = UDim2.new(1, 0, 0, CONFIG.SectionHeaderHeight),
+        Size = UDim2.new(1, -12, 1, 0),
+        Position = UDim2.new(0, 10, 0, 0),
         Font = Enum.Font.GothamBold,
-        Text = "▼  " .. name,
+        Text = name or "Section",
         TextColor3 = CONFIG.TextColor,
         TextSize = 14,
         TextXAlignment = Enum.TextXAlignment.Left,
-        AutoButtonColor = false,
-        Parent = container,
-    })
-    create("UIPadding", {
-        PaddingLeft = UDim.new(0, 10),
-        Parent = header,
+        Parent = section,
     })
 
-    -- Body (holds buttons)
-    local body = create("Frame", {
-        Name = "Body",
-        BackgroundTransparency = 1,
-        Position = UDim2.new(0, 0, 0, CONFIG.SectionHeaderHeight),
-        Size = UDim2.new(1, 0, 0, 0),
-        AutomaticSize = Enum.AutomaticSize.Y,
-        Visible = not collapsed,
-        Parent = container,
-    })
-    create("UIListLayout", {
-        Padding = UDim.new(0, 4),
-        SortOrder = Enum.SortOrder.LayoutOrder,
-        Parent = body,
-    })
-    create("UIPadding", {
-        PaddingTop = UDim.new(0, 4),
-        PaddingBottom = UDim.new(0, 6),
-        PaddingLeft = UDim.new(0, 6),
-        PaddingRight = UDim.new(0, 6),
-        Parent = body,
-    })
-
-    local section = setmetatable({
-        Name = name,
-        Container = container,
-        Header = header,
-        Body = body,
-        Collapsed = collapsed,
-        Hub = self,
-    }, Section)
-
-    header.MouseButton1Click:Connect(function()
-        section:Toggle()
-    end)
-
-    table.insert(self.Sections, section)
     return section
 end
 
-function Section:Toggle()
-    self.Collapsed = not self.Collapsed
-    self.Body.Visible = not self.Collapsed
-    self.Header.Text = (self.Collapsed and "▶  " or "▼  ") .. self.Name
-end
-
-function Section:SetTitle(text)
-    self.Name = text
-    self.Header.Text = (self.Collapsed and "▶  " or "▼  ") .. text
-end
-
---==============================================================
--- BUTTON / TOGGLE / LABEL (now usable on Hub OR Section)
---==============================================================
-
--- internal: resolve parent frame
-local function getParentFrame(target)
-    if target and target.Body then
-        return target.Body
-    end
-    return target -- assume it's the hub's ScrollingFrame
-end
-
--- AddButton({ Name, Callback })  -- callable on Hub or Section
+-- AddButton({ Name, Callback })
 function Hub:AddButton(options)
     options = options or {}
     local name = options.Name or "Button"
@@ -375,38 +301,7 @@ function Hub:AddButton(options)
     addCorner(button, 6)
     addStroke(button)
     applyGradient(button, 60)
-    self:_wireButton(button, name, callback)
-    table.insert(self.Buttons, button)
-    return button
-end
 
-function Section:AddButton(options)
-    options = options or {}
-    local name = options.Name or "Button"
-    local callback = options.Callback or function() end
-
-    local button = create("TextButton", {
-        Name = name .. "_Button",
-        BackgroundColor3 = CONFIG.BackgroundColor,
-        BorderSizePixel = 0,
-        Size = UDim2.new(1, 0, 0, CONFIG.ButtonHeight),
-        Font = Enum.Font.Gotham,
-        Text = name,
-        TextColor3 = CONFIG.TextColor,
-        TextScaled = true,
-        TextWrapped = true,
-        AutoButtonColor = false,
-        Parent = self.Body,
-    })
-    addCorner(button, 6)
-    addStroke(button)
-    applyGradient(button, 60)
-    self.Hub:_wireButton(button, name, callback)
-    table.insert(self.Hub.Buttons, button)
-    return button
-end
-
-function Hub:_wireButton(button, name, callback)
     button.MouseEnter:Connect(function()
         TweenService:Create(button, TweenInfo.new(0.15), {
             BackgroundColor3 = CONFIG.HoverColor,
@@ -417,10 +312,14 @@ function Hub:_wireButton(button, name, callback)
             BackgroundColor3 = CONFIG.BackgroundColor,
         }):Play()
     end)
+
     button.MouseButton1Click:Connect(function()
         local ok, err = pcall(callback)
         if not ok then warn("[UVH] Button error: " .. tostring(err)) end
     end)
+
+    table.insert(self.Buttons, button)
+    return button
 end
 
 -- AddToggle({ Name, Default, Callback })
@@ -442,50 +341,18 @@ function Hub:AddToggle(options)
     return button
 end
 
-function Section:AddToggle(options)
-    options = options or {}
-    local name = options.Name or "Toggle"
-    local state = options.Default or false
-    local callback = options.Callback or function() end
-
-    local button
-    button = self:AddButton({
-        Name = name .. ": " .. (state and "ON" or "OFF"),
-        Callback = function()
-            state = not state
-            button.Text = name .. ": " .. (state and "ON" or "OFF")
-            callback(state)
-        end,
-    })
-    return button
-end
-
 -- AddLabel(text)
 function Hub:AddLabel(text)
     local label = create("TextLabel", {
         BackgroundTransparency = 1,
-        Size = UDim2.new(1, 0, 0, 24),
-        Font = Enum.Font.GothamBold,
-        Text = text or "Label",
-        TextColor3 = CONFIG.TextColor,
-        TextScaled = true,
-        TextWrapped = true,
-        Parent = self.ScrollingFrame,
-    })
-    applyGradient(label, 60)
-    return label
-end
-
-function Section:AddLabel(text)
-    local label = create("TextLabel", {
-        BackgroundTransparency = 1,
-        Size = UDim2.new(1, 0, 0, 20),
+        Size = UDim2.new(1, 0, 0, 22),
         Font = Enum.Font.Gotham,
         Text = text or "Label",
         TextColor3 = CONFIG.TextColor,
         TextScaled = true,
         TextWrapped = true,
-        Parent = self.Body,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        Parent = self.ScrollingFrame,
     })
     applyGradient(label, 60)
     return label
