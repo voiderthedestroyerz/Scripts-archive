@@ -1,5 +1,5 @@
 -- Ultimate Vulnerable Hub (UVH)
--- Version: 3.2
+-- Version: 3.3 -- added Sections
 -- Created by VOIDERTHEDESTROYER (aka HyperionBypass)
 
 local Players = game:GetService("Players")
@@ -20,13 +20,15 @@ local CONFIG = {
     BackgroundColor = Color3.fromRGB(30, 30, 30),
     HoverColor = Color3.fromRGB(45, 45, 45),
     TextColor = Color3.fromRGB(255, 255, 255),
+    SectionColor = Color3.fromRGB(25, 25, 25),
     GradientColors = ColorSequence.new{
         ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)),
         ColorSequenceKeypoint.new(0.50, Color3.fromRGB(85, 85, 85)),
         ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255)),
     },
     GradientSpeed = 45,
-    ButtonHeight = 49,
+    ButtonHeight = 40,
+    SectionHeaderHeight = 30,
     AvatarSize = 100,
     HeaderHeight = 31,
 }
@@ -38,8 +40,8 @@ local Hub = {}
 Hub.__index = Hub
 Hub.Buttons = {}
 Hub.Connections = {}
+Hub.Sections = {}
 
---// internal: create instance
 local function create(className, props)
     local inst = Instance.new(className)
     for k, v in pairs(props or {}) do
@@ -49,7 +51,6 @@ local function create(className, props)
     return inst
 end
 
---// internal: animated gradient
 local function applyGradient(parent, speed)
     local gradient = create("UIGradient", {
         Color = CONFIG.GradientColors,
@@ -100,7 +101,6 @@ function Hub:CreateWindow()
     addStroke(main)
     applyGradient(main)
 
-    -- Title bar
     local titleBar = create("Frame", {
         Name = "TitleBar",
         BackgroundColor3 = CONFIG.BackgroundColor,
@@ -122,7 +122,6 @@ function Hub:CreateWindow()
     })
     applyGradient(titleLabel, 60)
 
-    -- Avatar
     local avatarFrame = create("Frame", {
         BackgroundColor3 = CONFIG.BackgroundColor,
         BorderSizePixel = 0,
@@ -181,7 +180,6 @@ function Hub:CreateWindow()
     })
     applyGradient(descLabel, 60)
 
-    -- Scrolling button area
     local scroll = create("ScrollingFrame", {
         BackgroundTransparency = 1,
         BorderSizePixel = 0,
@@ -196,15 +194,15 @@ function Hub:CreateWindow()
     self.ScrollingFrame = scroll
 
     create("UIListLayout", {
-        Padding = UDim.new(0, 2),
+        Padding = UDim.new(0, 6),
         SortOrder = Enum.SortOrder.LayoutOrder,
         Parent = scroll,
     })
     create("UIPadding", {
-        PaddingTop = UDim.new(0, 4),
-        PaddingBottom = UDim.new(0, 4),
-        PaddingLeft = UDim.new(0, 4),
-        PaddingRight = UDim.new(0, 4),
+        PaddingTop = UDim.new(0, 6),
+        PaddingBottom = UDim.new(0, 6),
+        PaddingLeft = UDim.new(0, 6),
+        PaddingRight = UDim.new(0, 6),
         Parent = scroll,
     })
 
@@ -250,10 +248,112 @@ function Hub:MakeDraggable(dragFrame, target)
 end
 
 --==============================================================
--- PUBLIC API
+-- SECTION OBJECT
+--==============================================================
+local Section = {}
+Section.__index = Section
+
+-- AddSection({ Name, Collapsed })
+function Hub:AddSection(options)
+    options = options or {}
+    local name = options.Name or "Section"
+    local collapsed = options.Collapsed or false
+
+    -- Section container
+    local container = create("Frame", {
+        Name = name .. "_Section",
+        BackgroundColor3 = CONFIG.SectionColor,
+        BorderSizePixel = 0,
+        Size = UDim2.new(1, 0, 0, CONFIG.SectionHeaderHeight),
+        AutomaticSize = Enum.AutomaticSize.Y,
+        Parent = self.ScrollingFrame,
+    })
+    addCorner(container, 6)
+    addStroke(container)
+    applyGradient(container, 30)
+
+    -- Header (clickable)
+    local header = create("TextButton", {
+        Name = "Header",
+        BackgroundTransparency = 1,
+        Size = UDim2.new(1, 0, 0, CONFIG.SectionHeaderHeight),
+        Font = Enum.Font.GothamBold,
+        Text = "▼  " .. name,
+        TextColor3 = CONFIG.TextColor,
+        TextSize = 14,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        AutoButtonColor = false,
+        Parent = container,
+    })
+    create("UIPadding", {
+        PaddingLeft = UDim.new(0, 10),
+        Parent = header,
+    })
+
+    -- Body (holds buttons)
+    local body = create("Frame", {
+        Name = "Body",
+        BackgroundTransparency = 1,
+        Position = UDim2.new(0, 0, 0, CONFIG.SectionHeaderHeight),
+        Size = UDim2.new(1, 0, 0, 0),
+        AutomaticSize = Enum.AutomaticSize.Y,
+        Visible = not collapsed,
+        Parent = container,
+    })
+    create("UIListLayout", {
+        Padding = UDim.new(0, 4),
+        SortOrder = Enum.SortOrder.LayoutOrder,
+        Parent = body,
+    })
+    create("UIPadding", {
+        PaddingTop = UDim.new(0, 4),
+        PaddingBottom = UDim.new(0, 6),
+        PaddingLeft = UDim.new(0, 6),
+        PaddingRight = UDim.new(0, 6),
+        Parent = body,
+    })
+
+    local section = setmetatable({
+        Name = name,
+        Container = container,
+        Header = header,
+        Body = body,
+        Collapsed = collapsed,
+        Hub = self,
+    }, Section)
+
+    header.MouseButton1Click:Connect(function()
+        section:Toggle()
+    end)
+
+    table.insert(self.Sections, section)
+    return section
+end
+
+function Section:Toggle()
+    self.Collapsed = not self.Collapsed
+    self.Body.Visible = not self.Collapsed
+    self.Header.Text = (self.Collapsed and "▶  " or "▼  ") .. self.Name
+end
+
+function Section:SetTitle(text)
+    self.Name = text
+    self.Header.Text = (self.Collapsed and "▶  " or "▼  ") .. text
+end
+
+--==============================================================
+-- BUTTON / TOGGLE / LABEL (now usable on Hub OR Section)
 --==============================================================
 
--- AddButton({ Name, Callback, Tooltip })
+-- internal: resolve parent frame
+local function getParentFrame(target)
+    if target and target.Body then
+        return target.Body
+    end
+    return target -- assume it's the hub's ScrollingFrame
+end
+
+-- AddButton({ Name, Callback })  -- callable on Hub or Section
 function Hub:AddButton(options)
     options = options or {}
     local name = options.Name or "Button"
@@ -275,7 +375,38 @@ function Hub:AddButton(options)
     addCorner(button, 6)
     addStroke(button)
     applyGradient(button, 60)
+    self:_wireButton(button, name, callback)
+    table.insert(self.Buttons, button)
+    return button
+end
 
+function Section:AddButton(options)
+    options = options or {}
+    local name = options.Name or "Button"
+    local callback = options.Callback or function() end
+
+    local button = create("TextButton", {
+        Name = name .. "_Button",
+        BackgroundColor3 = CONFIG.BackgroundColor,
+        BorderSizePixel = 0,
+        Size = UDim2.new(1, 0, 0, CONFIG.ButtonHeight),
+        Font = Enum.Font.Gotham,
+        Text = name,
+        TextColor3 = CONFIG.TextColor,
+        TextScaled = true,
+        TextWrapped = true,
+        AutoButtonColor = false,
+        Parent = self.Body,
+    })
+    addCorner(button, 6)
+    addStroke(button)
+    applyGradient(button, 60)
+    self.Hub:_wireButton(button, name, callback)
+    table.insert(self.Hub.Buttons, button)
+    return button
+end
+
+function Hub:_wireButton(button, name, callback)
     button.MouseEnter:Connect(function()
         TweenService:Create(button, TweenInfo.new(0.15), {
             BackgroundColor3 = CONFIG.HoverColor,
@@ -286,18 +417,32 @@ function Hub:AddButton(options)
             BackgroundColor3 = CONFIG.BackgroundColor,
         }):Play()
     end)
-
     button.MouseButton1Click:Connect(function()
         local ok, err = pcall(callback)
         if not ok then warn("[UVH] Button error: " .. tostring(err)) end
     end)
-
-    table.insert(self.Buttons, button)
-    return button
 end
 
 -- AddToggle({ Name, Default, Callback })
 function Hub:AddToggle(options)
+    options = options or {}
+    local name = options.Name or "Toggle"
+    local state = options.Default or false
+    local callback = options.Callback or function() end
+
+    local button
+    button = self:AddButton({
+        Name = name .. ": " .. (state and "ON" or "OFF"),
+        Callback = function()
+            state = not state
+            button.Text = name .. ": " .. (state and "ON" or "OFF")
+            callback(state)
+        end,
+    })
+    return button
+end
+
+function Section:AddToggle(options)
     options = options or {}
     local name = options.Name or "Toggle"
     local state = options.Default or false
@@ -331,7 +476,22 @@ function Hub:AddLabel(text)
     return label
 end
 
--- Loadstring(code) -- decorative/optional
+function Section:AddLabel(text)
+    local label = create("TextLabel", {
+        BackgroundTransparency = 1,
+        Size = UDim2.new(1, 0, 0, 20),
+        Font = Enum.Font.Gotham,
+        Text = text or "Label",
+        TextColor3 = CONFIG.TextColor,
+        TextScaled = true,
+        TextWrapped = true,
+        Parent = self.Body,
+    })
+    applyGradient(label, 60)
+    return label
+end
+
+-- Loadstring
 function Hub:Loadstring(code)
     local fn, err = loadstring(code)
     if not fn then warn("[UVH] Loadstring error: " .. tostring(err)) return false end
@@ -340,7 +500,7 @@ function Hub:Loadstring(code)
     return true
 end
 
--- Destroy()
+-- Destroy
 function Hub:Destroy()
     for _, conn in ipairs(self.Connections) do
         pcall(function() conn:Disconnect() end)
@@ -350,11 +510,10 @@ function Hub:Destroy()
 end
 
 --==============================================================
--- AUTO-INIT: create window + expose global
+-- AUTO-INIT
 --==============================================================
 local window = setmetatable({}, Hub)
 window:CreateWindow()
 _G.UVH = window
-getgenv().UVH = window   -- for executors
-
+if getgenv then getgenv().UVH = window end
 return window
