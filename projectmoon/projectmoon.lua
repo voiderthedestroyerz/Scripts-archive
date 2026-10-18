@@ -871,74 +871,73 @@ task.spawn(C_c);
 -- StarterGui.ProjectMoonPM.main.Executor.scripts.r6.thescripfrorr6
 local function C_f()
 local script = G2L["f"];
+	local Players = game:GetService("Players")
+    local LocalPlayer = Players.LocalPlayer or Players:GetPropertyChangedSignal("LocalPlayer"):Wait() and Players.LocalPlayer
 	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.TextBox.Text = [[
-	require(3436957371):r6("user")
-	]]
+		script.Parent.Parent.Parent.TextBox.Text = 'require(3436957371):r6("' .. LocalPlayer.Name .. '")'
 	end)
 	
 end;
 task.spawn(C_f);
 -- StarterGui.ProjectMoonPM.main.Executor.scripts.c00l.thescripfrorc00l
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer or Players:GetPropertyChangedSignal("LocalPlayer"):Wait() and Players.LocalPlayer
+
+-- StarterGui.ProjectMoonPM.main.Executor.scripts.message.messagescript
 local function C_11()
 local script = G2L["11"];
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.TextBox.Text = [[
-		require(14125553864):Fire("user","c00lkidd")
-	]]
-	end)
-	
+    script.Parent.MouseButton1Click:Connect(function()
+        script.Parent.Parent.Parent.TextBox.Text = 'require(14125553864):Fire(' .. LocalPlayer.Name .. ',"c00lkidd")'
+    end)
+    
 end;
 task.spawn(C_11);
+
 -- StarterGui.ProjectMoonPM.main.Executor.scripts.message.messagescript
 local function C_14()
 local script = G2L["14"];
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.TextBox.Text = [[
-		--Credits to this guy for the script https://scriptblox.com/script/Universal-Script-message-script-30617
-		local text = "text" --your text here
-		local duration = 5
-		local message = Instance.new("Message", game.Workspace)
-		message.Text = text
-		wait(duration)
-		message:Destroy()
-	
-	]]
-	end)
-	
+    script.Parent.MouseButton1Click:Connect(function()
+        script.Parent.Parent.Parent.TextBox.Text = [[
+--Credits to this guy for the script https://scriptblox.com/script/Universal-Script-message-script-30617
+local text = "puturtexthere"
+local duration = 5
+local message = Instance.new("Message", game.Workspace)
+message.Text = text
+wait(duration)
+message:Destroy()
+]]
+    end)
+    
 end;
 task.spawn(C_14);
+
 -- StarterGui.ProjectMoonPM.main.Executor.scripts.stummyguns.stummygunsscript
 local function C_16()
 local script = G2L["16"];
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.TextBox.Text = [[
-	require(7633712551)("user","Guns") 
-	]]
-	end)
-	
+    script.Parent.MouseButton1Click:Connect(function()
+        script.Parent.Parent.Parent.TextBox.Text = 'require(7633712551)("' .. LocalPlayer.Name .. '","Guns")'
+    end)
+    
 end;
 task.spawn(C_16);
+
 -- StarterGui.ProjectMoonPM.main.Executor.scripts.k00pv11.k00pscript
 local function C_18()
 local script = G2L["18"];
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.TextBox.Text = [[
-		require(15267263357).V11("user") 
-	]]
-	end)
-	
+    script.Parent.MouseButton1Click:Connect(function()
+        script.Parent.Parent.Parent.TextBox.Text = 'require(15267263357).V11("' .. LocalPlayer.Name .. '")'
+    end)
+    
 end;
 task.spawn(C_18);
+
 -- StarterGui.ProjectMoonPM.main.Executor.scripts.spunchub.spunchhubscript
 local function C_1a()
 local script = G2L["1a"];
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.TextBox.Text = [[
-		require(129030785853219)("user")
-	]]
-	end)
-	
+    script.Parent.MouseButton1Click:Connect(function()
+        script.Parent.Parent.Parent.TextBox.Text = 'require(129030785853219)("' .. LocalPlayer.Name .. '")'
+    end)
+    
 end;
 task.spawn(C_1a);
 -- StarterGui.ProjectMoonPM.main.Executor.executor.hjhhhhhhhhhh
