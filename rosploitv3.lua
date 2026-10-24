@@ -20,7 +20,8 @@ Removed:                                                           RC7
 A script that could not be shared due to pentesting reasons        Linux-Sploit
                                                                         Created by VOIDERTHEDESTROYER for Da Exploiterz
 ]]
-
+print("For support join the server")
+print("https://discord.gg/GNYmtZMwKB")
 local Players = game:GetService("Players")
 local UserInputService = game:GetService("UserInputService")
 local TextService = game:GetService("TextService")
