@@ -18,6 +18,7 @@ local G2L = {};
 G2L["1"] = Instance.new("ScreenGui", playerGui);
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 G2L["1"]["Name"] = "AudioListenerGui"
+G2L["1"]["ResetOnSpawn"] = false
 
 G2L["2"] = Instance.new("Frame", G2L["1"]);
 G2L["2"]["BorderSizePixel"] = 0;
